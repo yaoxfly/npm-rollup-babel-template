@@ -5,9 +5,12 @@
   "author": "yaoxfly",
   "license": "MIT",
   "private": false,
-  "main": "./lib/umd/index.js",
   "module": "./lib/esm/index.js",
-  "type": "module",
+  "main": "./lib/cjs/index.js",
+  "exports": {
+    "import": "./lib/esm/index.js",
+    "require": "./lib/cjs/index.j"
+  },
   "types": "typings/index.d.ts",
   "scripts": {
     "rollup": "node ./node_modules/rollup/dist/bin/rollup -c -w",
@@ -19,7 +22,10 @@
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-customizable"
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./cz.config.cjs"
     }
   },
   "files": [],
@@ -50,6 +56,7 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
+    "commitizen": "^4.2.5",
     "commitlint-config-cz": "^0.13.3",
     "commitlint-config-gitmoji": "^2.2.6",
     "cz-customizable": "^7.0.0",
