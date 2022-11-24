@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "target": "es5",
+    "checkJs": true,
+    "jsx": "preserve",
+    "declaration": true,
+    "sourceMap": true,
+    "moduleResolution": "node", //模块解析方式
+    "removeComments": true, // 删除编译后的所有的注释
+    "esModuleInterop": true, //允许通过es6语法引入commonjs模块
+    "resolveJsonModule": true, //解析json模块--不设置某些块会引入会报错
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "rollup.config.js"],
+  "files": ["./src/index.ts"]
+}
