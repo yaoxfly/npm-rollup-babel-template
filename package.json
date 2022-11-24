@@ -1,6 +1,6 @@
 {
   "name": "npm-ts-template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npm发包模板",
   "author": "yaoxfly",
   "license": "MIT",
@@ -12,7 +12,15 @@
   "scripts": {
     "rollup": "node ./node_modules/rollup/dist/bin/rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "publish": "npm version patch -f"
+    "publish": "npm version patch -f",
+    "prepare": "husky install",
+    "commit": "git-cz",
+    "release": "standard-version"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   },
   "files": [],
   "bin": {},
@@ -34,17 +42,24 @@
   },
   "homepage": "https://github.com/yaoxfly/npm-ts-template#readme",
   "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.1.0",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
+    "commitlint-config-cz": "^0.13.3",
+    "commitlint-config-gitmoji": "^2.2.6",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.28.0",
+    "husky": "^8.0.2",
     "rollup": "^3.4.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-node-externals": "^5.0.2",
     "rollup-plugin-typescript2": "^0.34.1",
+    "standard-version": "^9.5.0",
     "typescript": "^4.9.3"
   }
 }
