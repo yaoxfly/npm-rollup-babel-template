@@ -1,0 +1,50 @@
+{
+  "name": "npm-ts-template",
+  "version": "1.0.0",
+  "description": "npm发包模板",
+  "author": "yaoxfly",
+  "license": "MIT",
+  "private": false,
+  "main": "./lib/umd/index.js",
+  "module": "./lib/esm/index.js",
+  "type": "module",
+  "types": "typings/index.d.ts",
+  "scripts": {
+    "rollup": "node ./node_modules/rollup/dist/bin/rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm version patch -f"
+  },
+  "files": [],
+  "bin": {},
+  "engines": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaoxfly/npm-ts-template.git"
+  },
+  "keywords": [
+    "npm",
+    "发包",
+    "模板"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yaoxfly/npm-ts-template/issues"
+  },
+  "homepage": "https://github.com/yaoxfly/npm-ts-template#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.1.0",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint": "^8.28.0",
+    "rollup": "^3.4.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-node-externals": "^5.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.9.3"
+  }
+}
