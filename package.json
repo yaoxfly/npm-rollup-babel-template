@@ -18,7 +18,16 @@
     "publish": "npm version patch -f",
     "prepare": "husky install",
     "commit": "git-cz",
-    "release": "standard-version"
+    "release": "standard-version",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix"
+  },
+  "files": [],
+  "bin": {},
+  "engines": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "config": {
     "commitizen": {
@@ -28,20 +37,28 @@
       "config": "./cz.config.cjs"
     }
   },
-  "files": [],
-  "bin": {},
-  "engines": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yaoxfly/npm-ts-template.git"
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx}": [
+      "npm run lint"
+    ]
   },
   "keywords": [
     "npm",
     "发包",
-    "模板"
+    "模板",
+    "template",
+    "rollup",
+    "husky",
+    "lint-staged",
+    "commitlint",
+    "commitizen"
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaoxfly/npm-ts-template.git"
   },
   "bugs": {
     "url": "https://github.com/yaoxfly/npm-ts-template/issues"
@@ -58,10 +75,10 @@
     "@typescript-eslint/parser": "^5.44.0",
     "commitizen": "^4.2.5",
     "commitlint-config-cz": "^0.13.3",
-    "commitlint-config-gitmoji": "^2.2.6",
     "cz-customizable": "^7.0.0",
     "eslint": "^8.28.0",
     "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
     "rollup": "^3.4.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-node-externals": "^5.0.2",

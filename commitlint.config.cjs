@@ -20,10 +20,9 @@ module.exports = {
         'refactor',
         'build',
         'ci',
-        'chore', // 变更构建流程或辅助工具
-        'revert', // 回滚到上一个版本
-        'wip', //进行中的工作
-        'update' // 更新：普通更新
+        'chore',
+        'revert',
+        'update'
       ]
     ]
   }
