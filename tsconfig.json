@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
-    "target": "es5",
+    "baseUrl": "./",
+    "target": "es5", //有用ts插件(tsc)打包当前target才会生效
     "checkJs": true,
     "jsx": "preserve",
     "declaration": true,
@@ -11,7 +12,11 @@
     "esModuleInterop": true, //允许通过es6语法引入commonjs模块
     "resolveJsonModule": true, //解析json模块--不设置某些块会引入会报错
     "allowJs": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "paths": {
+      "tslib": ["bower_components/tslib/tslib.d.ts"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "rollup.config.mjs"],
   "files": ["./src/index.ts"]
