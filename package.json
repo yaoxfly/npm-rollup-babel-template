@@ -64,12 +64,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yaoxfly/npm-ts-template.git"
+    "url": "git+https://github.com/yaoxfly/npm-rollup-babel-template.git"
   },
   "bugs": {
-    "url": "https://github.com/yaoxfly/npm-ts-template/issues"
+    "url": "https://github.com/yaoxfly/npm-rollup-babel-template/issues"
   },
-  "homepage": "https://github.com/yaoxfly/npm-ts-template#readme",
+  "homepage": "https://github.com/yaoxfly/npm-rollup-babel-template#readme",
   "devDependencies": {
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.20.2",
