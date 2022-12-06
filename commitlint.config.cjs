@@ -13,16 +13,16 @@ module.exports = {
       [
         'feat',
         'fix',
-        'perf',
-        'style',
+        'update',
         'docs',
-        'test',
+        'style',
+        'chore',
+        'perf',
         'refactor',
         'build',
         'ci',
-        'chore',
+        'test',
         'revert',
-        'update'
       ]
     ]
   }

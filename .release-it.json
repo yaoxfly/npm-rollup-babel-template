@@ -20,16 +20,16 @@
         "types": [
           { "type": "feat", "section": "新增" },
           { "type": "fix", "section": "Bug 修复" },
-          { "type": "perf", "hidden": true },
-          { "type": "style", "hidden": true },
+          { "type": "update", "section": "更新" },
           { "type": "docs", "hidden": true },
-          { "type": "test", "hidden": true },
+          { "type": "style", "hidden": true },
+          { "type": "chore", "hidden": true },
+          { "type": "perf", "hidden": true },
           { "type": "refactor", "hidden": true },
           { "type": "build", "hidden": true },
           { "type": "ci", "hidden": true },
-          { "type": "chore", "hidden": true },
-          { "type": "revert", "hidden": true },
-          { "type": "update", "hidden": true }
+          { "type": "test", "hidden": true },
+          { "type": "revert", "hidden": true }
         ]
       }
     }
