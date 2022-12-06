@@ -8,28 +8,35 @@
   "module": "./lib/esm/index.js",
   "main": "./lib/cjs/index.js",
   "exports": {
-    "import": "./lib/esm/index.js",
-    "require": "./lib/cjs/index.j"
+    ".": {
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
+    }
   },
   "types": "typings/index.d.ts",
   "scripts": {
-    "lib": "npm run  typeCheck &&  npm run rollup",
-    "c": "npm run commit",
-    "rollup": "node ./node_modules/rollup/dist/bin/rollup -c -w",
+    "dev": "concurrently 'pnpm:watch-*'",
+    "build": "pnpm run build:types & pnpm run build:lib ",
+    "watch-types": "tsc --outDir ./lib/typings  -p ./tsconfig.json --emitDeclarationOnly -w",
+    "watch-lib": "node ./node_modules/rollup/dist/bin/rollup -c -w",
+    "build:lib": "node ./node_modules/rollup/dist/bin/rollup -c",
+    "build:types": "tsc --outDir ./lib/typings  -p ./tsconfig.json --emitDeclarationOnly",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
     "commit": "git-cz",
+    "c": "pnpm run commit",
     "release": "release-it",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
-    "typeCheck": "tsc --noEmit"
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix"
   },
   "files": [
     "lib"
   ],
   "bin": {},
   "engines": {
-    "node": ">= 16"
+    "node": ">=14.19.0",
+    "pnpm": ">=7.0.0"
   },
+  "packageManager": "pnpm@7.18.0",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -89,15 +96,14 @@
     "@typescript-eslint/parser": "^5.44.0",
     "commitizen": "^4.2.5",
     "commitlint-config-cz": "^0.13.3",
+    "concurrently": "^7.6.0",
     "cz-customizable": "^7.0.0",
     "eslint": "^8.28.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "release-it": "^15.5.0",
     "rollup": "^3.4.0",
-    "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-node-externals": "^5.0.2",
-    "rollup-plugin-typescript2": "^0.34.1",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3"
   },
