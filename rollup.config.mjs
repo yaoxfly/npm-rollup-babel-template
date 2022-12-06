@@ -1,9 +1,7 @@
 import { defineConfig } from 'rollup';
-import livereload from "rollup-plugin-livereload"
 import terser from "@rollup/plugin-terser"
-import ts from "rollup-plugin-typescript2" //babel和ts二选一
 import { nodeResolve } from '@rollup/plugin-node-resolve'; //rollup默认只能是绝对路径，可处理相对路径，省略引入文件的后缀名称(可省略的名称需要配置)
-import commonjs from '@rollup/plugin-commonjs'; //三方库没有默认default
+import commonjs from '@rollup/plugin-commonjs'; //第三方库没有默认default,CommonJS 转为 ES6
 import externals from "rollup-plugin-node-externals";
 import json from '@rollup/plugin-json';
 import { babel } from '@rollup/plugin-babel';
@@ -37,8 +35,6 @@ export default defineConfig({
     }),
     externals({}),
     json(),
-    livereload(),
-    // ts(),
     babel({
       exclude: 'node_modules/**',
       babelHelpers: 'runtime',
