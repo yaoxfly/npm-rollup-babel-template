@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
     "outDir": "./lib",
-    "baseUrl": "./",
-    "target": "es5", //有用ts插件(tsc)打包当前target才会生效
-    "checkJs": true,
+    "baseUrl": ".",
     "jsx": "preserve",
+    "target": "ES2015", //有用ts插件(tsc)打包当前target才会生效
+    "module": "ESNext",
+    "checkJs": true,
     "declaration": true,
     "sourceMap": true,
     "moduleResolution": "node", //模块解析方式
@@ -18,6 +19,5 @@
       "tslib": ["bower_components/tslib/tslib.d.ts"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "rollup.config.mjs"],
-  "files": ["./src/index.ts"]
+  "include": ["src/**/*"]
 }
