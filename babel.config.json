@@ -13,8 +13,6 @@
         //   "safari": "11.1",
         //   "ie": "11"
         // },
-        // "useBuiltIns": "usage", //自动按需引入全局regeneratorRuntime函数
-        // "corejs": "3.6.5", // 自动按需引入全局polyfill
         "modules": false,
         "loose": true
       },
@@ -25,10 +23,8 @@
     [
       "@babel/plugin-transform-runtime",
       {
-        "helpers": true,
-        "corejs": 3, //类似@babel/polyfill（会重写了window.Promise及其原型链）的作用，但不会在引入 API 的同时污染全局环境。
-        "regenerator": true, //自动按需引入非全局 regeneratorRuntime 函数
-        "useESModules": false
+        "corejs": 3,
+        "version": "7.20.6"
       }
     ]
   ]
