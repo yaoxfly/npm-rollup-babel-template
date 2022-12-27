@@ -5,22 +5,23 @@
   "author": "yaoxfly",
   "license": "MIT",
   "private": false,
-  "module": "./lib/esm/index.js",
-  "main": "./lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "main": "lib/cjs/index.js",
+  "unpkg": "lib/umd/index.min.js",
+  "jsdelivr": "lib/umd/index.min.js",
+  "types": "lib/typings/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/esm/index.js",
-      "require": "./lib/cjs/index.js"
+      "require": "./lib/cjs/index.js",
+      "types": "./lib/typings/index.d.ts"
     }
   },
-  "types": "typings/index.d.ts",
   "scripts": {
     "dev": "concurrently 'pnpm:watch-*'",
-    "build": "pnpm run build:types & pnpm run build:lib ",
-    "watch-types": "tsc --outDir ./lib/typings  -p ./tsconfig.json --emitDeclarationOnly -w",
+    "build": "pnpm run build:types && pnpm run build:lib",
     "watch-lib": "node ./node_modules/rollup/dist/bin/rollup -c -w",
     "build:lib": "node ./node_modules/rollup/dist/bin/rollup -c",
-    "build:types": "tsc --outDir ./lib/typings  -p ./tsconfig.json --emitDeclarationOnly",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
     "commit": "git-cz",
@@ -103,11 +104,12 @@
     "lint-staged": "^13.0.3",
     "release-it": "^15.5.0",
     "rollup": "^3.4.0",
+    "rollup-plugin-dts": "^5.0.0",
     "rollup-plugin-node-externals": "^5.0.2",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3"
   },
-  "dependencies": {
-    "@babel/runtime-corejs3": "^7.20.5"
+  "peerDependencies": {
+    "@babel/runtime-corejs3": "^7.20.6"
   }
 }
