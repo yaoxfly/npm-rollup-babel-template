@@ -1,5 +1,19 @@
 
 
+## [1.2.0](https://github.com/yaoxfly/npm-rollup-babel-template/compare/1.1.0...1.2.0) (2022-12-27)
+
+
+### 更新
+
+* 删除scopes配置，添加skipQuestions 配置过滤问题 ([aa138f0](https://github.com/yaoxfly/npm-rollup-babel-template/commit/aa138f0139e235fb4e3c0c34a82c924967e6ea15))
+* babel配置修改 ([c20227a](https://github.com/yaoxfly/npm-rollup-babel-template/commit/c20227a2113ec5a81ca3ab7248b9a684e817a531))
+
+
+### 新增
+
+* 添加打包范例 ([e8dfe82](https://github.com/yaoxfly/npm-rollup-babel-template/commit/e8dfe82eb71e3ff4f988352f20cb7d4aac9e2d2b))
+* 添加格式规范配置 ([b9dd004](https://github.com/yaoxfly/npm-rollup-babel-template/commit/b9dd0042ffd7f079f3d9b54e45065ef9720869b4))
+
 ## 1.1.0 (2022-12-02)
 
 
