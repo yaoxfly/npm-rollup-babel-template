@@ -1,9 +1,6 @@
-export const test1 = async () => {
-  const a = () => {
-    return 1
-  }
-  const bb = await a()
-  return bb
+import * as test1Module from './test1'
+import * as test2Module from './test2'
+export {
+  test1Module,
+  test2Module
 }
-
-export const test2 = "hello world!";
